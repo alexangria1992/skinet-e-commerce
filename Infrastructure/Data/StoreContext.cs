@@ -2,10 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 
 
-namespace Infrastructure.Data
+namespace Infrastructure.Data;
+
+public class StoreContext(DbContextOptions options) : DbContext(options)
 {
-    public class StoreContext(DbContextOptions options) : DbContext(options)
-    {
-        public DbSet<Product> Products { get; set; }
-        }
+    public DbSet<Product> Products { get; set; }
 }
+
